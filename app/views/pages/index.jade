@@ -1,21 +1,19 @@
 extends ../layout
 
 block content
-
   h1 gTables
+    a(href='#') New Restaurant
 
 
   if restaurants
-    table.table.table-striped
+    table.table.table-stripe
      tbody
        for restaurant in restaurants
          tr
            td= restaurant.name
-           td
-            img(src=''+restaurant.image+'')
-           td= restaurant.cuisine
-           td= restaurant.city
-           td= restaurant.state
-           td= restaurant.rating
+            p
+              img(src=''+restaurant.image+'')
+            p= restaurant.cuisine
+            p= restaurant.city + ', ' + restaurant.state + ' ' + restaurant.rating
            
            

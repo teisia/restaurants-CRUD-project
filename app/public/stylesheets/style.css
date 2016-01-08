@@ -1,8 +1,23 @@
 body {
-  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
+h1 {
+  background-color: #56CD77;
+  color: #3B4637;
+  text-align: center;
+  padding: 10px;
+}
+
+h1 a {
+  font-size: 20px;
+}
+
 a {
-  color: #00B7FF;
+  color: #FFFFFF;
+}
+
+td img {
+  height: 200px;
+  width: 230px;
 }
