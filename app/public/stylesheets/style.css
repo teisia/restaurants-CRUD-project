@@ -7,17 +7,55 @@ h1 {
   color: #3B4637;
   text-align: center;
   padding: 10px;
+  height: 10vh;
+  margin: 0;
+  font-size: 50px;
 }
 
-h1 a {
+.title {
+  padding-left: 155px;
+}
+
+#link {
+  float: right;
   font-size: 20px;
+  margin-top: 25px;
 }
 
 a {
-  color: #FFFFFF;
+  color: white;
 }
 
-td img {
-  height: 200px;
-  width: 230px;
+.mainContainer {
+  margin-top: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  width: 100vw;
+  height: 85vh;
+}
+
+.inner {
+  margin: auto;
+  background-color: #E1E1E1;
+  height: 40%;
+  width: 20%;
+  border: 2px solid black;
+}
+
+.inner img {
+  margin-left: 18%;
+  margin-bottom: 3%;
+  height: 60%;
+  width: 65%;
+ }
+
+.inner h3 {
+  margin-left: 10px;
+  margin-top: 2px;
+}
+
+.inner p {
+  margin-left: 10px;
+  margin-bottom: 1px;
 }

@@ -1,19 +1,17 @@
 extends ../layout
 
 block content
-  h1 gTables
-    a(href='#') New Restaurant
+  h1.title gTables 
+     #link
+      a(href='#') New Restaurant
 
 
   if restaurants
-    table.table.table-stripe
-     tbody
+    .mainContainer
        for restaurant in restaurants
-         tr
-           td= restaurant.name
-            p
-              img(src=''+restaurant.image+'')
+          .inner
+            h3= restaurant.name
+            img(src=''+restaurant.image+'')
             p= restaurant.cuisine
             p= restaurant.city + ', ' + restaurant.state + ' ' + restaurant.rating
-           
            
