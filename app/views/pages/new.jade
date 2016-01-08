@@ -1,0 +1,95 @@
+extends ../layout
+
+block content
+  h1 New Restaurant
+  div.newPageContainer
+    p Create Restaurant
+    div.newFormContainer
+      form 
+        div.form(method='post' action='/restaurants') 
+          label(for='name') Name
+          input.form-control(type='text' id='name' name='name' placeholder='Restaurant Name')
+        div.form.location
+          label(for='location') Location
+          input.form-control(type='text' id='location' name='city' placeholder='City')
+          select.form-control(id='location' name='state')
+            option(value="AL") AL
+            option(value="AK") AK
+            option(value="AZ") AZ
+            option(value="AR") AR
+            option(value="CA") CA
+            option(value="CO") CO
+            option(value="CT") CT
+            option(value="DE") DE
+            option(value="DC") DC
+            option(value="FL") FL
+            option(value="GA") GA
+            option(value="HI") HI
+            option(value="ID") ID
+            option(value="IL") IL
+            option(value="IN") IN
+            option(value="IA") IA
+            option(value="KS") KS
+            option(value="KY") KY
+            option(value="LA") LA
+            option(value="ME") ME
+            option(value="MD") MD
+            option(value="MA") MA
+            option(value="MI") MI
+            option(value="MN") MN
+            option(value="MS") MS
+            option(value="MO") MO
+            option(value="MT") MT
+            option(value="NE") NE
+            option(value="NV") NV
+            option(value="NH") NH
+            option(value="NJ") NJ
+            option(value="NM") NM
+            option(value="NY") NY
+            option(value="NC") NC
+            option(value="ND") ND
+            option(value="OH") OH
+            option(value="OK") OK
+            option(value="OR") OR
+            option(value="PA") PA
+            option(value="RI") RI
+            option(value="SC") SC
+            option(value="SD") SD
+            option(value="TN") TN
+            option(value="TX") TX
+            option(value="UT") UT
+            option(value="VT") VT
+            option(value="VA") VA
+            option(value="WA") WA
+            option(value="WV") WV
+            option(value="WI") WI
+            option(value="WY") WY
+        div.form  
+          label(for='cuisine') Cuisine
+          select.form-control(id='location' name='state')
+            option(value="American Cuisine") American 
+            option(value="Chinese Cuisine") Chinese 
+            option(value="Italian Cuisine") Italian 
+            option(value="Japanese Cuisine") Japanese 
+            option(value="Korean Cuisine") Korean 
+            option(value="Mexican Cuisine") Mexican 
+            option(value="Polish Cuisine") Polish 
+            option(value="Thai Cuisine") Thai 
+            option(value="Vietnamese Cuisine") Vietnamese 
+            option(value="Other Cuisine") Other 
+        .radioButtons
+          label(for='rating') Rating
+          input(type='radio' name='rating' value='1')
+          input(type='radio' name='rating' value='2')
+          input(type='radio' name='rating' value='3' checked)
+          input(type='radio' name='rating' value='4')
+          input(type='radio' name='rating' value='5')
+        div.form.image
+          label(for='image') Image
+          input(id='image' name='image' placeholder='Image URL')
+        div.form
+          textarea(id='bio', name='bio' placeholder='Short Bio')
+        button.submitNew(type='submit') Submit
+        button.cancelNew(type='cancel') Cancel
+          
+        

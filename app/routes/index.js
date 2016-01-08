@@ -9,10 +9,15 @@ function restaurants() {
   return knex('restaurants');
 }
 
-/* GET home page. */
 router.get('/restaurants', function(req, res, next) {
   restaurants().select().then(function(result) {
     res.render('pages/index', {restaurants: result});
+  })
+});
+
+router.get('/restaurants/new', function(req, res, next) {
+  restaurants().select().then(function(result) {
+    res.render('pages/new');
   })
 });
 
