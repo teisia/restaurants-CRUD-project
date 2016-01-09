@@ -35,4 +35,8 @@ router.post('/restaurants', function(req, res, next) {
   })
 });
 
+router.get('/restaurants/show', function(req, res, next) {
+    res.render('pages/show');
+});
+
 module.exports = router;
