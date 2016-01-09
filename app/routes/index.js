@@ -16,8 +16,22 @@ router.get('/restaurants', function(req, res, next) {
 });
 
 router.get('/restaurants/new', function(req, res, next) {
-  restaurants().select().then(function(result) {
     res.render('pages/new');
+});
+
+router.post('/restaurants', function(req, res, next) {
+  console.log(req.body.state);
+  var newRestaurant = {
+    name: req.body.name,
+    city: req.body.city,
+    state: req.body.state,
+    cuisine: req.body.cuisine,
+    rating: req.body.rating,
+    image: req.body.image,
+    bio: req.body.bio
+  }
+  restaurants().insert(newRestaurant).then(function(result) {
+    res.redirect('/restaurants');
   })
 });
 

@@ -5,8 +5,8 @@ block content
   div.newPageContainer
     p Create Restaurant
     div.newFormContainer
-      form 
-        div.form(method='post' action='/restaurants') 
+      form(method='post' action='/restaurants')  
+        div.form
           label(for='name') Name
           input.form-control(type='text' id='name' name='name' placeholder='Restaurant Name')
         div.form.location
@@ -66,7 +66,7 @@ block content
             option(value="WY") WY
         div.form  
           label(for='cuisine') Cuisine
-          select.form-control(id='location' name='state')
+          select.form-control(id='location' name='cuisine')
             option(value="American Cuisine") American 
             option(value="Chinese Cuisine") Chinese 
             option(value="Italian Cuisine") Italian 
@@ -89,7 +89,7 @@ block content
           input(id='image' name='image' placeholder='Image URL')
         div.form
           textarea(id='bio', name='bio' placeholder='Short Bio')
-        button.submitNew(type='submit') Submit
         button.cancelNew(type='cancel') Cancel
+        button.submitNew(type='submit') Submit
           
         
