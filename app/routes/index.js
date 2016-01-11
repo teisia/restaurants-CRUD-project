@@ -35,8 +35,10 @@ router.post('/restaurants', function(req, res, next) {
   })
 });
 
-router.get('/restaurants/show', function(req, res, next) {
-    res.render('pages/show');
+router.get('/restaurants/:id', function(req, res, next) {
+  restaurants().where('id', req.params.id).first().then(function(result) {
+    res.render('pages/show', {restaurants: result});
+  })
 });
 
 module.exports = router;

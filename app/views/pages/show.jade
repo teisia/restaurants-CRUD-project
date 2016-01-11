@@ -1,4 +1,11 @@
 extends ../layout
 
 block content
-  h1 Hello
+  if restaurant
+     h1 restaurant.name
+       .leftShowPg
+         img(src=''+restaurant.image+'')
+       .rightShowPg
+         p= restaurant.cuisine
+         p= 'Located in ' + restaurant.city + ', ' + restaurant.state      
+         p= restaurant.bio
