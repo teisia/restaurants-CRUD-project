@@ -10,6 +10,10 @@ function restaurants() {
   return knex('restaurants');
 }
 
+router.get('/', function(req, res, next) {
+    res.redirect('/restaurants');
+});
+
 router.get('/restaurants', function(req, res, next) {
   restaurants().select().then(function(result) {
     res.render('pages/index', {restaurants: result});
