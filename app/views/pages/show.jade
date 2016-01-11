@@ -12,13 +12,17 @@ block content
       .rightShowPg
         p= restaurants.cuisine
         p= 'Located in ' + restaurants.city + ', ' + restaurants.state  
+        br
         if restaurants.bio     
           p= restaurants.bio
         else 
           p= 'There is no bio for this restaurant.'
-        p.showRating Rating: 
+        br
+        p.showRating Rating:
         -for(var i=0; i<restaurants.rating; i++)
           img(src='https://cdn4.iconfinder.com/data/icons/small-n-flat/24/star-24.png')
-        button.deleteShow(type='delete'): a(href='/restaurants/'+restaurants.id+'/delete') Delete
-        button.editShow(type='edit'): a(href='/restaurants/'+restaurants.id+'/edit') Edit
-      
+        br
+        br
+        .showButtons
+          button.editShow(type='edit'): a(href='/restaurants/'+restaurants.id+'/edit') Edit
+          button.deleteShow(type='delete'): a(href='/restaurants/'+restaurants.id+'/delete') Delete

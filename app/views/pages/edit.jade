@@ -92,5 +92,6 @@ block content
             input(id='image' name='image' placeholder='' value=restaurants.image)
           div.form
             textarea(id='bio', name='bio' placeholder='') #{restaurants.bio}
-          button.cancelNew(type='cancel'): a(href='/restaurants') Cancel
-          button.submitNew(type='submit') Submit
+          div.form
+            button.cancelNew(type='cancel'): a(href='/restaurants') Cancel
+            button.submitNew(type='submit') Submit
