@@ -20,7 +20,6 @@ router.get('/restaurants/new', function(req, res, next) {
 });
 
 router.post('/restaurants', function(req, res, next) {
-  console.log(req.body.state);
   var newRestaurant = {
     name: req.body.name,
     city: req.body.city,
