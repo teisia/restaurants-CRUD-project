@@ -1,11 +1,24 @@
 extends ../layout
 
-block content
-  if restaurant
-     h1 restaurant.name
-       .leftShowPg
-         img(src=''+restaurant.image+'')
-       .rightShowPg
-         p= restaurant.cuisine
-         p= 'Located in ' + restaurant.city + ', ' + restaurant.state      
-         p= restaurant.bio
+block header
+  h1 hello
+  
+block content 
+  if restaurants
+    h1= restaurants.name
+    .showMainContainer
+      .leftShowPg
+        img(src=''+restaurants.image+'')
+      .rightShowPg
+        p= restaurants.cuisine
+        p= 'Located in ' + restaurants.city + ', ' + restaurants.state  
+        if restaurants.bio     
+          p= restaurants.bio
+        else 
+          p= 'There is no bio for this restaurant.'
+        p.showRating Rating: 
+        -for(var i=0; i<restaurants.rating; i++)
+          img(src='https://cdn4.iconfinder.com/data/icons/small-n-flat/24/star-24.png')
+        button.deleteShow(type='delete'): a(href='/restaurants/'+restaurants.id+'/delete') Delete
+        button.editShow(type='edit'): a(href='/restaurants/'+restaurants.id+'/edit') Edit
+      

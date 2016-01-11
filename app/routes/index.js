@@ -41,4 +41,16 @@ router.get('/restaurants/:id', function(req, res, next) {
   })
 });
 
+router.get('/restaurants/:id/edit', function(req, res, next) {
+  restaurants().where('id', req.params.id).first().then(function(result) {
+    res.render('pages/edit', {restaurants: result});
+  })
+});
+
+router.post('/restaurants/:id', function(req, res, next) {
+  restaurants().where('id', req.params.id).update(req.body).then(function(result) {
+    res.redirect('/restaurants');
+  })
+});
+
 module.exports = router;

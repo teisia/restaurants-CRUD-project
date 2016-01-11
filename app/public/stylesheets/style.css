@@ -139,3 +139,34 @@ button {
   background-color: #FF5938;
   padding: 5px 10px 5px 10px;
 }
+
+.showMainContainer {
+  font-size: 20px;
+  font-style: italic;
+  color: #3B4637;
+}
+
+.leftShowPg {
+  width: 50vw;
+  float: left;
+}
+
+.leftShowPg img {
+  height: 50%;
+  width: 55%;
+}
+
+.rightShowPg {
+  width: 50vw;
+  float: left;
+}
+
+.deleteShow {
+  background-color: #58CC76;
+  padding: 5px 10px 5px 10px;
+}
+
+.editShow {
+  background-color: #FF5938;
+  padding: 5px 10px 5px 10px;
+}
