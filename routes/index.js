@@ -10,6 +10,10 @@ function restaurants() {
   return knex('restaurants');
 }
 
+function employees() {
+  return knex('employees');
+}
+
 router.get('/', function(req, res, next) {
     res.redirect('/restaurants');
 });
@@ -60,6 +64,12 @@ router.post('/restaurants/:id', function(req, res, next) {
 router.get('/restaurants/:id/delete', function(req, res, next) {
   restaurants().where('id', req.params.id).del().then(function(result) {
     res.redirect('/restaurants');
+  })
+})
+
+router.get('/admin', function(req, res, next) {
+  restaurants().select().then(function(result) {
+    res.render('pages/admin', {restaurants: result});
   })
 })
 

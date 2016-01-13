@@ -1,0 +1,8 @@
+extends ../layout
+
+block content
+  h1 Admin
+    .restaurantListAdmin
+      for restaurant in restaurants
+        h3: a(href='/restaurants/'+restaurant.id+'')= restaurant.name
+        

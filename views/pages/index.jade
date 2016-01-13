@@ -3,7 +3,8 @@ extends ../layout
 block content
   h1.title gTables 
      #link
-      a(href='/restaurants/new') New Restaurant
+      a(href='/restaurants/new') New Restaurant &bull;
+      a(href='/admin')  Admin
   if restaurants
     .mainContainer
       for restaurant in restaurants
