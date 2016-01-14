@@ -68,9 +68,13 @@ router.get('/restaurants/:id/delete', function(req, res, next) {
 })
 
 router.get('/admin', function(req, res, next) {
-  restaurants().select().then(function(result) {
-    res.render('pages/admin', {restaurants: result});
+  restaurants().select().then(function(result1) {
+    employees().select().then(function(result2) {
+      res.render('pages/admin', {restaurants: result1, employees: result2})
+    })
   })
 })
+
+
 
 module.exports = router;

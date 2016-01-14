@@ -26,6 +26,15 @@ a {
   color: white;
 }
 
+.restaurantListAdmin {
+  text-align: left;
+  padding: 20px 0 0 15px;
+}
+
+.restList {
+  font-size: 20px;
+}
+
 .mainContainer {
   margin-top: 15px;
   display: flex;

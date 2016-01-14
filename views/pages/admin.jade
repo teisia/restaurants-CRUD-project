@@ -5,4 +5,11 @@ block content
     .restaurantListAdmin
       for restaurant in restaurants
         h3: a(href='/restaurants/'+restaurant.id+'')= restaurant.name
+        ul.restList
+          for employee in employees 
+            if employee.restaurants_id == restaurant.id
+              li= employee.first_name + ' ' + employee.last_name
+        
+              
+    
         
