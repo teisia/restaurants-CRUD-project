@@ -9,7 +9,7 @@ block content
     .mainContainer
       for restaurant in restaurants
         .inner
-          h3: a(href='/restaurants/'+restaurant.id+'')= restaurant.name
+          h3: a(href='/restaurants/'+ restaurant.id + '')= restaurant.name
           img(src=''+restaurant.image+'')
           p= restaurant.cuisine
           p= restaurant.city + ', ' + restaurant.state 
