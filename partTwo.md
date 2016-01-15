@@ -14,6 +14,12 @@
 Your data model should be done using draw.io or lucidchart!
 Attach a link or screen shot of your data model to your readMe!**
 
+###USER Show page
+![image](images/show.jpg)
+
+###ADMIN Show page
+![image](images/admin.png)
+
 ### 1. Reviews
 * When a user comes to the show page of a restaurant they will see many reviews under the description
 * The user has the option to add a new review
@@ -32,8 +38,10 @@ Attach a link or screen shot of your data model to your readMe!**
 ####Stretch:
 * When a user is on the show all restaurants page (index), they can see how many reviews this restaurant has
 * When a user sees the overall restaurant rating, it is an average of the ratings of all the reviews
-* The reviews are shown as snippets if they are longer than the alotted space
-* The review can be expanded by a *read more* button 
+* The reviews are shown as snippets if they are longer than the a lotted space
+* The review can be expanded by clicking on the *...* of the snippet
+
+![image](images/review.jpg)
 
 ### 2. Employees
 * When a user comes to the show one restaurant page, they should be able to add employees
@@ -49,6 +57,9 @@ Attach a link or screen shot of your data model to your readMe!**
 ####Stretch:
 * The user can add multiple employees at once
 * The User can delete multiple employees at once
+
+![image](images/employees.jpg)
+
 
 ### 3. Validations
 * The user should be able to enter info about an employee and submits the form.
