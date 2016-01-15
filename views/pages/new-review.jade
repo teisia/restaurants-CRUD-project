@@ -1,0 +1,26 @@
+extends ../layout
+
+block content
+  h1 New Review
+  div.newPageContainer
+    p New Review
+    div.newFormContainer
+      form 
+        div.form.review
+          label(for='name') Name
+          input.form-control(type='text' id='name' name='name' placeholder='Name')
+          label(for='Date') Date
+          input.form-control(type='date' id='date' name='date' placeholder='mm/dd/yyyy')
+        .radioButtons
+          label(for='rating') Rating
+          input(type='radio' name='rating' value='1')
+          input(type='radio' name='rating' value='2')
+          input(type='radio' name='rating' value='3' checked)
+          input(type='radio' name='rating' value='4')
+          input(type='radio' name='rating' value='5')
+        div.form.review
+          label(for='review') Review
+          textarea.form-control(id='bio', name='bio' placeholder='Your experience..')
+        div.form.review
+          button.cancelNew: a(href='/restaurants') Cancel
+          button.submitNew(type='submit') Submit

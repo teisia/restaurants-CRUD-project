@@ -7,7 +7,11 @@ function restaurants() {
 };
 
 function employees() {
-    return knex('employees');
+  return knex('employees');
+};
+
+function review() {
+  return knex('review');
 };
 
 router.get('/', function(req, res, next) {
@@ -68,6 +72,12 @@ router.get('/admin', function(req, res, next) {
     employees().select().then(function(result2) {
       res.render('pages/admin', {restaurants: result1, employees: result2})
     })
+  })
+})
+
+router.get('/restaurants/:id/reviews/new', function(req, res, next) {
+  restaurants().where('id', req.params.id).first().then(function(result) {
+    res.render('pages/new-review');
   })
 })
 

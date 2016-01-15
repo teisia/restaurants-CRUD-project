@@ -144,6 +144,10 @@ h3 a {
   color: #3B4637;
 }
 
+.review input {
+  margin-bottom: 10px;
+}
+
 .submitNew {
   background-color: #58CC76;
   padding: 5px 10px 5px 10px;
