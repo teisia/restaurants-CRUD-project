@@ -1,7 +1,7 @@
 #Create a Restaurant Listing!
 
 You're going to create your first project using all the skills you learned this week and from previous weeks!
-*All Images are provided for you in the images folder! Feel free to use your own tho!* 
+*All Images are provided for you in the images folder! Feel free to use your own tho!*
 
 ##1. Wire it Up!
 Get an express app wired up and ready
@@ -66,18 +66,3 @@ If the user clicks to delete a restaurant the restaurant will be deleted from th
 4. Extract all database calls out of your routes and use functions that do the work for you instead.
 
 5. When the user creates a new restaurant, or edits the restaurant information, they should be able to see their image render before submitting
-
-6. The ability to create reservations:
-  * a. When creating a restaurant, user should be able to select the meals the restaurant offers (breakfast, brunch, lunch, dinner, dessert)
-  * b. The meals will correlate to times in 1 hour increments as such
-    * Breakfast - Times 7am - 11am
-    * Brunch - 9am - 2pm
-    * Lunch - 11am - 2pm
-    * Dinner - 5pm - 9pm
-    * Dessert - 9pm - 11pm
-  * c. Users should be able to Select a time to reserve on the show page
-  * d. If a time is selected to reserve, a new form appears asking for:
-      * First Name, Last Name, Phone Number, Number in the party, Email
-      * All items should have proper validations
-  * e. Once the reservation is submitted, that time should disappear from the available times to reserve
-  * f. Show some indication that reservations are unable
