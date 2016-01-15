@@ -23,15 +23,17 @@ Attach a link or screen shot of your data model to your readMe!**
   * Review
   * Rating of restaurant
   * restaurant association
-
 * The user can post their new review
 * The user can go and edit a review
 * When the user edits a review, the information should be pre-filled
 * The user can delete a review
+* The reviews should all occupy the same amount of space on the page ie. Same box size
 
 ####Stretch:
 * When a user is on the show all restaurants page (index), they can see how many reviews this restaurant has
 * When a user sees the overall restaurant rating, it is an average of the ratings of all the reviews
+* The reviews are shown as snippets if they are longer than the alotted space
+* The review can be expanded by a *read more* button 
 
 ### 2. Employees
 * When a user comes to the show one restaurant page, they should be able to add employees
