@@ -10,16 +10,15 @@
 
 #Things you will be adding by using these concepts
 
-**Be sure to read through this whole document, then DATA MODEL your app!
+**!!!!!!! Be sure to read through this whole document, then DATA MODEL your app!
 Your data model should be done using draw.io or lucidchart!
-Attach a link or screen shot of your data model to your readMe!**
+Attach a link or screen shot of your data model to your readMe!!!!!!!**
 
 ###USER Show page
 ![image](images/show.jpg)
 
 ###ADMIN Show page
 ![image](images/admin.png)
-
 ### 1. Reviews
 * When a user comes to the show page of a restaurant they will see many reviews under the description
 * The user has the option to add a new review
@@ -58,7 +57,7 @@ Attach a link or screen shot of your data model to your readMe!**
 * The user can add multiple employees at once
 * The User can delete multiple employees at once
 
-![image](images/employees.jpg)
+![image](images/employee.jpg)
 
 
 ### 3. Validations
