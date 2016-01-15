@@ -207,3 +207,16 @@ h3 a {
   background-color: #74A4D9;
   padding: 5px 10px 5px 10px;
 }
+
+.reviewBox {
+  font-size: 15px;
+}
+
+.reviewBox img {
+  height: 17px;
+  width: 17px;
+}
+
+.floatRight {
+  float: right;
+}
