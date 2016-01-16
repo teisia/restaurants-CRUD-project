@@ -4,10 +4,14 @@ block content
  h1 Admin
     .adminContainer
       for restaurant in restaurants 
-        table 
+        table
           tbody
             tr
               td= restaurant.name
-              td
-              td
+              td Rating: 
+                -for(var i=0; i<restaurant.rating; i++)
+                  img(src='https://cdn4.iconfinder.com/data/icons/small-n-flat/24/star-24.png')
+                button.editAdmin(type='edit'): a(href='/restaurants/'+restaurant.id+'/edit') Edit
+                button.deleteAdmin(type='delete'): a(href='/restaurants/'+restaurant.id+'/delete') Delete
+              
       

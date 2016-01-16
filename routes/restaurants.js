@@ -105,4 +105,11 @@ router.get('/:id/reviews/:reviewid/edit', (function(req, res, next) {
   })
 }));
 
+//add new employee
+
+router.get('/:id/employees/new', function(req, res) {
+    res.render('pages/new-employee');
+});
+
+
 module.exports = router;

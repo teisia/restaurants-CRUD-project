@@ -2,26 +2,26 @@ extends ../layout
 
 block content
   if restaurants
-    h1 Edit Review
-    div.newPageContainer
-      p Edit Review
-      div.newFormContainer
-        form(method='post' action='/restaurants/'+restaurants.id+'/reviews')
-          div.form.review
-            label(for='name') Name
-            input.form-control(type='text' id='name' name='name' value=reviews.name)
-            label(for='date') Date
-            input.form-control(type='date' id='date' name='date' placeholder='mm/dd/yyyy')
-          .radioButtons
-            label(for='rating') Rating
-            input(type='radio' name='rating' value='1')
-            input(type='radio' name='rating' value='2')
-            input(type='radio' name='rating' value='3' checked)
-            input(type='radio' name='rating' value='4')
-            input(type='radio' name='rating' value='5')
-          div.form.review
-            label(for='review') Review
-            textarea.form-control(id='review', name='review' placeholder='Your experience..')
-          div.form.review
-            button.cancelNew: a(href='/restaurants/'+restaurants.id+'') Cancel
-            button.submitNew(type='submit') Submit
+      h1 Edit Review
+      div.newPageContainer
+        p Edit Review
+        div.newFormContainer
+          form(method='post' action='/restaurants/'+restaurants.id+'/reviews')
+            div.form.review
+              label(for='name') Name
+              input.form-control(type='text' id='name' name='name')
+              label(for='date') Date
+              input.form-control(type='date' id='date' name='date' placeholder='mm/dd/yyyy')
+            .radioButtons
+              label(for='rating') Rating
+              input(type='radio' name='rating' value='1')
+              input(type='radio' name='rating' value='2')
+              input(type='radio' name='rating' value='3' checked)
+              input(type='radio' name='rating' value='4')
+              input(type='radio' name='rating' value='5')
+            div.form.review
+              label(for='review') Review
+              textarea.form-control(id='review', name='review' placeholder='')
+            div.form.review
+              button.cancelNew: a(href='/restaurants/'+restaurants.id+'') Cancel
+              button.submitNew(type='submit') Submit

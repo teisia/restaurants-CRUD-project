@@ -206,6 +206,13 @@ h3 a {
   padding: 5px 10px 5px 10px;
 }
 
+.addEmp {
+  background-color: #74A4D9;
+  padding: 5px 10px 5px 10px;
+  border-radius: 5px;
+  border: none;
+}
+
 .reviewBox {
   font-size: 15px;
   float: right;
@@ -218,4 +225,34 @@ h3 a {
 
 .floatRight {
   float: right;
+}
+
+.floatRight a {
+  color: #3B4637;
+}
+
+.adminContainer {
+  font-size: 20px;
+  margin: 50px 0 0 20px;
+}
+
+.adminContainer button {
+  border: none;
+  border-radius: 5px;
+  margin: 7px;
+  width: 100px;
+}
+
+.adminContainer a {
+  color: #3B4637;
+}
+
+.editAdmin {
+  background-color: #58CC76;
+  padding: 5px 10px 5px 10px;
+}
+
+.deleteAdmin {
+  background-color: #FF5938;
+  padding: 5px 10px 5px 10px;
 }
