@@ -43,7 +43,9 @@ router.get('/:id', function(req, res) {
   var the_id = req.params.id;
   restaurants().where('id', the_id).first().then(function(result) {
     reviews().where({restaurants_id: the_id}).then(function(result2) {
-      res.render('pages/show', {restaurants: result, reviews: result2});
+      employees().where({restaurants_id: the_id}).then(function(result3) {
+      res.render('pages/show', {restaurants: result, reviews: result2, employees: result3});
+      })
     })
   })
 });
@@ -64,19 +66,19 @@ router.get('/:id/delete', function(req, res, next) {
   restaurants().where('id', req.params.id).del().then(function(result) {
     res.redirect('/');
   })
-})
+});
 
 //Review routes
 router.get('/:id/reviews/new', function(req, res, next) {
   restaurants().where('id', req.params.id).first().then(function(result) {
     res.render('pages/new-review', {restaurants: result});
   })
-})
+});
 
 // delete
 router.post('/:id/reviews/delete', function(req, res, next) {
   //
-})
+});
 
 //Add new review
 router.post('/:id/reviews', function(req, res, next) {
@@ -90,6 +92,17 @@ router.post('/:id/reviews', function(req, res, next) {
   reviews().insert(newReview).then(function(result) {
     res.redirect('/restaurants/'+req.params.id);
   })
-})
+});
+
+//edit review
+router.get('/:id/reviews/:reviewid/edit', (function(req, res, next) {
+  var restID = req.params.id;
+  var revID = req.params.reviewid;
+  restaurants().where({id: restID}).then(function(response1){
+  reviews().where({restaurants_id: restID}).then(function(response2){
+    res.render('pages/edit-review', {restaurants: response1, reviews: response2});
+    })
+  })
+}));
 
 module.exports = router;
