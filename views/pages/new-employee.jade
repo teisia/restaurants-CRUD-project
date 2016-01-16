@@ -1,4 +1,30 @@
 extends ../layout
 
 block content
-  h1 New Employee
+    h1 New Employee
+    div.newPageContainer
+      p New Employee
+       div.newFormContainer
+        form(method='post' action='')  
+          div.form
+            label(for='first_name') First Name
+            input.form-control(type='text' id='first_name' name='first_name' placeholder='First')
+          div.form
+            label(for='last_name') Last Name
+            input.form-control(type='text' id='last_name' name='last_name' placeholder='Last')
+          div.form  
+            label(for='position') Position
+            select.form-control(id='position' name='position')
+              option(value="Owner") Owner
+              option(value="Manager") Manager
+              option(value="Bartender") Bartender
+              option(value="Waiter") Waiter 
+              option(value="Host") Host
+              option(value="Bus") Bus 
+              option(value="Chef") Chef
+              option(value="Cook") Cook
+              option(value="Kitchen") Kitchen
+            button.cancelNew: a(href='/restaurants') Cancel
+            button.submitNew(type='submit') Submit
+              
+            
