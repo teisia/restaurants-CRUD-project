@@ -231,9 +231,27 @@ h3 a {
   color: #3B4637;
 }
 
+.italic {
+  font-style: italic;
+}
+
 .adminContainer {
   font-size: 20px;
-  margin: 50px 0 0 20px;
+  margin-top: 50px;
+}
+
+.adminTable {
+  margin: 0 auto;
+}
+
+.adminTable td {
+  width: 275px;
+  text-align: left;
+  padding: 10px;
+}
+
+.adminTable table, th, td {
+  border-bottom: 1px solid black;
 }
 
 .adminContainer button {
