@@ -1,11 +1,12 @@
 extends ../layout
 
 block content
+  if restaurants
     h1 New Employee
     div.newPageContainer
       p New Employee
       div.newFormContainer
-        form(method='post' action='')  
+        form(method='post' action='/restaurants/'+restaurants.id+'/employees')  
           div.form
             label(for='first_name') First Name
             input.form-control(type='text' id='first_name' name='first_name' placeholder='First')
@@ -24,7 +25,7 @@ block content
               option(value="Chef") Chef
               option(value="Cook") Cook
               option(value="Kitchen") Kitchen
-            button.cancelNew: a(href='/restaurants') Cancel
+            button.cancelNew: a(href='/restaurants/'+restaurants.id+'') Cancel
             button.submitNew(type='submit') Submit
               
             

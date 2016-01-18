@@ -126,7 +126,9 @@ router.get('/:id/reviews/:reviewid/delete', function(req, res, next) {
 
 // show add new employee page
 router.get('/:id/employees/new', function(req, res) {
-    res.render('pages/new-employee');
+  restaurants().where('id', req.params.id).first().then(function(result) {
+    res.render('pages/new-employee', {restaurants: result});
+  })
 });
 
 // post new employee
