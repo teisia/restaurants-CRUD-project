@@ -23,11 +23,12 @@ router.get('/', function(req, res) {
 
 // show add new restaurants page
 router.get('/new', function(req, res) {
-    res.render('pages/new');
+    res.render('pages/new', {errors:[]});
 });
 
-// post new restaurant
-router.post('/', function(req, res) {
+// post new restaurant and validate
+router.post('/new', function(req, res) {
+  var errors = [];
   var newRestaurant = {
     name: req.body.name,
     city: req.body.city,
@@ -36,10 +37,34 @@ router.post('/', function(req, res) {
     rating: req.body.rating,
     image: req.body.image,
     bio: req.body.bio
+  };
+  if(!req.body.name.trim()) {
+    errors.push("Restaurant name can't be blank")
   }
+  if(!req.body.city.trim()) {
+    errors.push("City can't be blank")
+  }
+  if(!req.body.state.trim()) {
+    errors.push("State can't be blank")
+  }
+  if(!req.body.cuisine.trim()) {
+    errors.push("Cuisine can't be blank")
+  }
+  if(!req.body.rating.trim()) {
+    errors.push("Rating can't be blank")
+  }
+  if(!req.body.image.trim()) {
+    errors.push("Image can't be blank")
+  }
+  if(!req.body.bio.trim()) {
+    errors.push("Bio can't be blank")
+  } if (errors.length) {
+    res.render('pages/new', {errors: errors})
+  } else {
   restaurants().insert(newRestaurant).then(function(result) {
-    res.redirect('/');
-  })
+    res.send('/');
+    })
+  }
 });
 
 // restaurant show page
