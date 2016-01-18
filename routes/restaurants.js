@@ -171,4 +171,11 @@ router.get('/:id/employees/:empid/delete', function(req, res, next) {
   })
 });
 
+// show full employee page
+//router.get('/:id/employees', function(req, res, next) {
+  //employees().where('restaurants_id', req.params.id).first().then(function(result){
+    //res.render('pages/employees', {employees: result});
+  //})
+//});
+
 module.exports = router;

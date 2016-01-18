@@ -30,7 +30,7 @@ a {
   padding: 0 0 0 15px;
   font-size: 15px;
   float: left;
-  margin: 15px 0 0 120px;
+  margin: 15px 0 0 100px;
 }
 
 .mainContainer {
@@ -305,7 +305,7 @@ h3 a {
 }
 
 .empTable td {
-  width: 120px;
+  width: 140px;
   padding-left: 5px;
 }
 
@@ -316,4 +316,8 @@ h3 a {
 
 .empTable a {
   color: #3B4637;
+}
+
+.employeePage {
+  text-align: left;
 }
