@@ -44,15 +44,6 @@ router.post('/new', function(req, res) {
   if(!req.body.city.trim()) {
     errors.push("City can't be blank")
   }
-  if(!req.body.state.trim()) {
-    errors.push("State can't be blank")
-  }
-  if(!req.body.cuisine.trim()) {
-    errors.push("Cuisine can't be blank")
-  }
-  if(!req.body.rating.trim()) {
-    errors.push("Rating can't be blank")
-  }
   if(!req.body.image.trim()) {
     errors.push("Image can't be blank")
   }
