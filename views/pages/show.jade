@@ -13,7 +13,7 @@ block content
         br
         .restaurantListAdmin
           button.showButtons.addEmp: a(href='/restaurants/'+restaurants.id+'/employees/new') Add Employee
-          table
+          table.empTable
             thead
               tr
                 th First Name 
@@ -46,7 +46,7 @@ block content
         br
         br
         .reviewBox
-          table
+          table.reviewTable
               for review in reviews
                 thead
                   tr
@@ -57,7 +57,7 @@ block content
                     td= review.review
                   tr
                     td.showRating
-                      -for(var i=0; i<restaurants.rating; i++)
+                      -for(var i=0; i<review.rating; i++)
                         img(src='https://cdn4.iconfinder.com/data/icons/small-n-flat/24/star-24.png')
                     td.floatRight: a(href='/restaurants/'+restaurants.id+'/reviews/'+review.id+'/edit') Edit
                   

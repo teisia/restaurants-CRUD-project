@@ -26,7 +26,7 @@ router.get('/new', function(req, res) {
     res.render('pages/new');
 });
 
-// update new restaurant
+// post new restaurant
 router.post('/', function(req, res) {
   var newRestaurant = {
     name: req.body.name,
@@ -61,7 +61,7 @@ router.get('/:id/edit', function(req, res) {
   })
 });
 
-// update restaurant page via edits
+// post edited restaurant
 router.post('/:id', function(req, res) {
   restaurants().where('id', req.params.id).update(req.body).then(function(result) {
     res.redirect('/');
@@ -82,11 +82,7 @@ router.get('/:id/reviews/new', function(req, res, next) {
   })
 });
 
-// delete review
-router.get('/:id/reviews/:reviewid/delete', function(req, res, next) {
-});
-
-//add new review
+//post new review
 router.post('/:id/reviews', function(req, res, next) {
   var newReview = {
     name: req.body.name,
@@ -100,20 +96,39 @@ router.post('/:id/reviews', function(req, res, next) {
   })
 });
 
-//edit review
-router.get('/:id/reviews/:reviewid/edit', (function(req, res, next) {
-  var restID = req.params.id;
-  var revID = req.params.reviewid;
-  restaurants().where({id: restID}).then(function(response1){
-  reviews().where({restaurants_id: restID}).then(function(response2){
-    res.render('pages/edit-review', {restaurants: response1, reviews: response2});
-    })
+// show edit review page
+router.get('/:id/reviews/:reviewid/edit', function(req, res, next) {
+  reviews().where('restaurants_id', req.params.id).first().then(function(result){
+    res.render('pages/edit-review', {reviews: result});
   })
-}));
+});
 
-//show add new employee page
+// post edited review
+router.post('/:id/reviews/:revid', function(req, res){
+ var items = {
+   name: req.body.name,
+   date: req.body.date,
+   rating: req.body.rating,
+   review: req.body.review,
+   restaurants_id: req.params.id
+ }
+ reviews().where('id', req.params.revid).update(items).then(function(result){
+     res.redirect('/restaurants/'+req.params.id);
+   })
+})
+
+// delete review
+router.get('/:id/reviews/:reviewid/delete', function(req, res, next) {
+  reviews().where('id', req.params.reviewid).del().then(function(result){
+    res.redirect('/restaurants/'+req.params.id);
+  })
+});
+
+// show add new employee page
 router.get('/:id/employees/new', function(req, res) {
     res.render('pages/new-employee');
 });
+
+// submit new employee
 
 module.exports = router;

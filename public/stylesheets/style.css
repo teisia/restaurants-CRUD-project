@@ -30,7 +30,7 @@ a {
   padding: 20px 0 0 15px;
   font-size: 15px;
   float: left;
-  margin: 5% 0 0 35%;
+  margin: 5% 0 0 28%;
 }
 
 .mainContainer {
@@ -171,7 +171,7 @@ h3 a {
 .leftShowPg img {
   height: 45%;
   width: 50%;
-  margin: 5% 0 0 35%;
+  margin: 5% 0 0 30%;
 }
 
 .rightShowPg {
@@ -216,6 +216,11 @@ h3 a {
 .reviewBox {
   font-size: 15px;
   float: right;
+  font-style: normal;
+}
+
+.reviewBox td {
+  width: 250px;
 }
 
 .reviewBox img {
@@ -229,6 +234,7 @@ h3 a {
 
 .floatRight a {
   color: #3B4637;
+  float: right;
 }
 
 .italic {
@@ -245,9 +251,9 @@ h3 a {
 }
 
 .adminTable td {
-  width: 275px;
+  width: 260px;
   text-align: left;
-  padding: 10px;
+  padding: 10px 10px 10px 0;
 }
 
 .adminTable table, th, td {
@@ -273,4 +279,19 @@ h3 a {
 .deleteAdmin {
   background-color: #FF5938;
   padding: 5px 10px 5px 10px;
+}
+
+.empTable table, th, td {
+  font-size: 17px;
+  border-bottom: none;
+  padding: 2px;
+}
+
+.empTable td {
+  width: 120px;
+}
+
+.empTable th {
+  background-color: #E0F8E1;
+  padding: 5px;
 }
