@@ -27,10 +27,10 @@ a {
 }
 
 .restaurantListAdmin {
-  padding: 20px 0 0 15px;
+  padding: 0 0 0 15px;
   font-size: 15px;
   float: left;
-  margin: 5% 0 0 28%;
+  margin: 15px 0 0 120px;
 }
 
 .mainContainer {
@@ -219,13 +219,19 @@ h3 a {
   font-style: normal;
 }
 
+.reviewBox table {
+  border: 1px solid #56CD77;
+  margin-bottom: 25px;
+}
+
 .reviewBox th {
   background-color: #E0F8E1;
-  padding: 5px;
+  padding: 0 0 5px 5px;
 }
 
 .reviewBox td {
   width: 285px;
+  padding-left: 5px;
 }
 
 .reviewBox img {
@@ -235,6 +241,7 @@ h3 a {
 
 .floatRight {
   text-align: right;
+  padding-right: 5px;
 }
 
 .floatRight a {
@@ -292,13 +299,19 @@ h3 a {
   padding: 2px;
 }
 
+.empTable {
+  margin-top: 5px;
+  border: 1px solid #56CD77;
+}
+
 .empTable td {
   width: 120px;
+  padding-left: 5px;
 }
 
 .empTable th {
   background-color: #E0F8E1;
-  padding: 5px;
+  padding: 0 0 5px 5px;
 }
 
 .empTable a {

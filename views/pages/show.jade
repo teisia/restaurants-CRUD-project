@@ -46,8 +46,8 @@ block content
         br
         br
         .reviewBox
-          table.reviewTable
-              for review in reviews
+          for review in reviews
+            table.reviewTable
                 thead
                   tr
                     th= review.name
@@ -55,6 +55,7 @@ block content
                 tbody
                   tr
                     td= review.review
+                    td 
                   tr
                     td.showRating
                       -for(var i=0; i<review.rating; i++)
