@@ -135,7 +135,7 @@ router.get('/:id/employees/new', function(req, res) {
 router.post('/:id/employees', function(req, res) {
 var newEmployee = {
   first_name: req.body.first_name,
-  last_name: req.body.last_name,
+  last_name: req.body.last_namde,
   position: req.body.position,
   restaurants_id: req.params.id
 }

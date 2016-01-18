@@ -23,7 +23,7 @@ block content
               label(for='review') Review
               textarea.form-control(id='review', name='review') #{reviews.review}
             div.form.review
-              button.addReviewShow(type='delete') Delete
+              button.addReviewShow(type='delete'): a(href='/restaurants/'+reviews.restaurants_id+'/reviews/'+reviews.id+'/delete') Delete
               button.cancelNew: a(href='/restaurants/'+reviews.restaurants_id+'') Cancel
               button.submitNew(type='submit') Submit
               
