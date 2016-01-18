@@ -144,4 +144,31 @@ employees().insert(newEmployee).then(function(result) {
   })
 })
 
+// show edit employee page
+router.get('/:id/employees/:empid/edit', function(req, res, next) {
+  employees().where('restaurants_id', req.params.id).first().then(function(result){
+    res.render('pages/edit-employee', {employees: result});
+  })
+});
+
+// post edited employee
+router.post('/:id/employees/:empid', function(req, res){
+ var items = {
+   first_name: req.body.first_name,
+   last_name: req.body.last_name,
+   position: req.body.position,
+   restaurants_id: req.params.id
+ }
+ employees().where('id', req.params.empid).update(items).then(function(result){
+     res.redirect('/restaurants/'+req.params.id);
+   })
+})
+
+// delete employee
+router.get('/:id/employees/:empid/delete', function(req, res, next) {
+  employees().where('id', req.params.empid).del().then(function(result){
+    res.redirect('/restaurants/'+req.params.id);
+  })
+});
+
 module.exports = router;

@@ -23,7 +23,7 @@ block content
               if employee.restaurants_id == restaurants.id
                 tbody
                   tr
-                    td= employee.first_name
+                    td: a(href='/restaurants/'+restaurants.id+'/employees/'+employee.id+'/edit')= employee.first_name
                     td= employee.last_name
                     td= employee.position
       .rightShowPg

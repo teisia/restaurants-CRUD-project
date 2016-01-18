@@ -1,0 +1,33 @@
+extends ../layout
+
+block content
+  if employees
+    h1 Edit Employee
+    div.newPageContainer
+      p New Employee
+      div.newFormContainer
+        form(method='post' action='/restaurants/'+employees.restaurants_id+'/employees/'+employees.id+'')  
+          div.form
+            label(for='first_name') First Name
+            input.form-control(type='text' id='first_name' name='first_name' value=employees.first_name)
+          div.form
+            label(for='last_name') Last Name
+            input.form-control(type='text' id='last_name' name='last_name' value=employees.last_name)
+          div.form  
+            label(for='position') Position
+            select.form-control(id='position' name='position')
+              option= employees.position
+              option(value="Owner") Owner
+              option(value="Manager") Manager
+              option(value="Bartender") Bartender
+              option(value="Waiter") Waiter 
+              option(value="Host") Host
+              option(value="Bus") Bus 
+              option(value="Chef") Chef
+              option(value="Cook") Cook
+              option(value="Kitchen") Kitchen
+            button.addReviewShow(type='delete'): a(href='/restaurants/'+employees.restaurants_id+'/employees/'+employees.id+'/delete') Delete
+            button.cancelNew: a(href='/restaurants/'+employees.restaurants_id+'') Cancel
+            button.submitNew(type='submit') Submit
+              
+            
