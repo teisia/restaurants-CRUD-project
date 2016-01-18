@@ -11,7 +11,7 @@ block content
               label(for='name') Name
               input.form-control(type='text' id='name' name='name' value=reviews.name)
               label(for='date') Date
-              input.form-control(type='date' id='date' name='date' value=reviews.date)
+              input.form-control(type='text' id='date' name='date' value=reviews.date)
             .radioButtons
                 label(for='rating') Rating
                 input(type='radio' name='rating' value='1' checked=(reviews ? (reviews.rating === 1 ? true : undefined ): undefined))
