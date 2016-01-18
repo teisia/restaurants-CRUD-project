@@ -219,8 +219,13 @@ h3 a {
   font-style: normal;
 }
 
+.reviewBox th {
+  background-color: #E0F8E1;
+  padding: 5px;
+}
+
 .reviewBox td {
-  width: 250px;
+  width: 285px;
 }
 
 .reviewBox img {
@@ -229,7 +234,7 @@ h3 a {
 }
 
 .floatRight {
-  float: right;
+  text-align: right;
 }
 
 .floatRight a {
