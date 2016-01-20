@@ -18,13 +18,17 @@ h1 {
 }
 
 .title {
-  padding-left: 240px;
+  padding-left: 420px;
 }
 
 #link {
   float: right;
   font-size: 20px;
   margin-top: 25px;
+}
+
+#link span {
+  color: white;
 }
 
 a {

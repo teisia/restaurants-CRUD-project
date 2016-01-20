@@ -12,6 +12,7 @@ var restaurants = require('./routes/restaurants');
 var employees = require('./routes/employees');
 var reviews = require('./routes/reviews');
 var admin = require('./routes/admin');
+var neighborhoods = require('./routes/neighborhoods');
 
 var app = express();
 
@@ -33,6 +34,7 @@ app.use('/restaurants', restaurants);
 app.use('/restaurants', employees);
 app.use('/restaurants', reviews);
 app.use('/admin', admin);
+app.use('/neighborhoods', neighborhoods);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
