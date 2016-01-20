@@ -12,6 +12,11 @@ h1 {
   font-size: 50px;
 }
 
+.error {
+  color: red;
+  font-weight: bold;
+}
+
 .title {
   padding-left: 240px;
 }
