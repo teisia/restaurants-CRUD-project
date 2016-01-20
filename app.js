@@ -10,6 +10,7 @@ var routes = require('./routes/index');
 var users = require('./routes/users');
 var restaurants = require('./routes/restaurants');
 var employees = require('./routes/employees');
+var reviews = require('./routes/reviews');
 var admin = require('./routes/admin');
 
 var app = express();
@@ -29,7 +30,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', routes);
 app.use('/users', users);
 app.use('/restaurants', restaurants);
-app.use('/employees', employees);
+app.use('/restaurants', employees);
+app.use('/restaurants', reviews);
 app.use('/admin', admin);
 
 // catch 404 and forward to error handler
