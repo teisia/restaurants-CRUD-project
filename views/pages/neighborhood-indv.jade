@@ -2,21 +2,23 @@ extends ../layout
 
 block content
   h1.neighborhoodTitle #{neighborhoods.name}
-    #link
-      a(href='/neighborhoods/#{neighborhoods.id}/edit') Edit
-  div#map.indvMap
-  script.
-    var city = '#{city}';
-    var state = '#{state}';
-  script.
-    var map;
-    var lat_long = '#{lat_long}';
-    var latitude = #{lat_long.lat};
-    var longitude = #{lat_long.lng};
-    function initMap() {
-      map = new google.maps.Map(document.getElementById('map'), {
-        center: {lat: latitude, lng: longitude},
-        zoom: 12
-      });
-    }
-  script(async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC_AEJoor25uoZy70X3iaMELWOJe14n8HE&callback=initMap")
+  div.neighborhoodShow
+    div#map.indvMap
+    script.
+      var map;
+      var lat_long = '#{lat_long}';
+      var latitude = #{lat_long.lat};
+      var longitude = #{lat_long.lng};
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: latitude, lng: longitude},
+          zoom: 12
+        });
+      }
+    script(async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC_AEJoor25uoZy70X3iaMELWOJe14n8HE&callback=initMap")
+    .neighRight
+      h3 #{neighborhoods.epicenter}
+      br
+      .showButtons
+        button.editShow(type='edit'): a(href='/neighborhoods/#{neighborhoods.id}/edit') Edit
+        button.deleteShow(type='delete'): a(href='/neighborhoods/#{neighborhoods.id}/delete') Delete

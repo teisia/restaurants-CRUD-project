@@ -337,16 +337,21 @@ h3 a {
   border: 1px solid #888;
 }
 
-#map2 {
-  height: 300px;
-  width: 300px;
-  border: 1px solid #888;
-}
-
 .indvMap {
-  margin: 100px auto;
+  float: left;
+  margin-left: 20%;
 }
 
 .neighborhoodTitle {
   text-align: center;
+}
+
+.neighRight {
+  float: left;
+  margin-top: 6%;
+  margin-left: 10%;
+}
+
+.neighborhoodShow {
+  margin: 70px auto;
 }

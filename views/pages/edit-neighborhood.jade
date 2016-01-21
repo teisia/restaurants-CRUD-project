@@ -14,5 +14,5 @@ block content
               label(for='epicenter') Epicenter 
               textarea.form-control(id='epicenter', name='epicenter') #{neighborhoods.epicenter}
             div.form.review
-              button.cancelNew: a(href='/neighborhoods') Cancel
+              button.cancelNew: a(href='/neighborhoods/'+neighborhoods.id+'') Cancel
               button.submitNew(type='submit') Submit
