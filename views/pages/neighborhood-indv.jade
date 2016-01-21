@@ -1,8 +1,13 @@
 extends ../layout
 
 block content
-  h1.neighborhoodTitle
+  h1.neighborhoodTitle #{neighborhoods.name}
+    #link
+      a(href='/neighborhoods/#{neighborhoods.id}/edit') Edit
   div#map.indvMap
+  script.
+    var city = '#{city}';
+    var state = '#{state}';
   script.
     var map;
     var lat_long = '#{lat_long}';
@@ -11,7 +16,7 @@ block content
     function initMap() {
       map = new google.maps.Map(document.getElementById('map'), {
         center: {lat: latitude, lng: longitude},
-        zoom: 8
+        zoom: 12
       });
     }
   script(async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC_AEJoor25uoZy70X3iaMELWOJe14n8HE&callback=initMap")

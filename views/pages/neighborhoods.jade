@@ -1,8 +1,9 @@
 extends ../layout
 
 block content
-    h1 Neighborhoods
-    
+  h1 Neighborhoods
+    #link
+      a(href='/neighborhoods/new') New
     div#map
     script.
       var map;
@@ -12,7 +13,7 @@ block content
       function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
           center: {lat: latitude, lng: longitude},
-          zoom: 8
+          zoom: 12
         });
       }
     script(async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC_AEJoor25uoZy70X3iaMELWOJe14n8HE&callback=initMap")
