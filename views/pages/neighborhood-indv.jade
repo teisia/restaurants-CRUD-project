@@ -1,9 +1,10 @@
 extends ../layout
 
 block content
-  h1 #{neigborhoods.name}
-
-  div#map
+  h1.neighborhoodTitle #{neigborhoods.name}
+    #link
+      a(href='/neighborhoods') Neighborhoods
+  div#map.indvMap
   script.
     var map;
     var lat_long = '#{lat_long}';

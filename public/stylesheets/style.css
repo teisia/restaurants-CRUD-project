@@ -336,3 +336,11 @@ h3 a {
   width: 300px;
   border: 1px solid #888;
 }
+
+.indvMap {
+  margin: 100px auto;
+}
+
+.neighborhoodTitle {
+  padding-left: 170px;
+}
