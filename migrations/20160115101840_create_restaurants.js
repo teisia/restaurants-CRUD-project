@@ -8,6 +8,7 @@ exports.up = function(knex, Promise) {
     table.integer('rating');
     table.text('bio');
     table.string('image');
+    table.integer('neighborhood_id')
   })
 };
 

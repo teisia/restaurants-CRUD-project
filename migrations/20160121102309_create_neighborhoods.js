@@ -1,7 +1,7 @@
 exports.up = function(knex, Promise) {
-  return knex.schema.createTable('neigborhoods', function(table){
+  return knex.schema.createTable('neighborhoods', function(table){
     table.increments();
-    table.string('address');
+    table.string('epicenter');
     table.string('name');
   })
 };
