@@ -7,7 +7,7 @@ function neighborhoods() {
   return knex('neighborhoods');
 };
 
-// show neighborhoods page
+// show all neighborhoods page
 router.get('/', function(req, res, next) {
   neighborhoods().first().then(function(result) {
     var google_api = 'https://maps.googleapis.com/maps/api/geocode/json';
@@ -47,5 +47,14 @@ router.get('/:id', function(req, res, next) {
   })
 });
 
+// show edit neighborhood page
+router.get('/:id/edit', function(req, res, next) {
+  neighborhoods().where('id', req.params.id).first().then(function(result) {
+    res.render('pages/edit-neighborhood', {neighborhoods: result});
+  })
+})
+
+// post edited neighborhood
+router.post('/')
 
 module.exports = router;
