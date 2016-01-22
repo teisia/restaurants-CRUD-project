@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var knex = require('../db/knex');
+var validate = require('../lib/validations');
 
 function restaurants() {
   return knex('restaurants');

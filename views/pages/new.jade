@@ -3,9 +3,8 @@ extends ../layout
 block content
   h1 New Restaurant
   div.newPageContainer
-    if errors 
-      for error in errors
-        p.error #{error}
+      include ../includes/errors.jade
+      br
       p Create Restaurant
       div.newFormContainer
         form(method='post' action='/restaurants/new')  
@@ -15,7 +14,7 @@ block content
           div.form.location
             label(for='location') Location
             input.form-control(type='text' id='location' name='city' placeholder='City')
-            select.form-control(id='location' name='state')
+            select.form-control(id='location' name='state' required)
               option(value="AL") AL
               option(value="AK") AK
               option(value="AZ") AZ
@@ -69,7 +68,7 @@ block content
               option(value="WY") WY
           div.form  
             label(for='cuisine') Cuisine
-            select.form-control(id='location' name='cuisine')
+            select.form-control(id='location' name='cuisine' required)
               option(value="American Cuisine") American 
               option(value="Chinese Cuisine") Chinese 
               option(value="Italian Cuisine") Italian 

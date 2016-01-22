@@ -1,0 +1,6 @@
+extends ../layout 
+
+block content 
+  if errors
+    for error in errors
+      p.errors= error

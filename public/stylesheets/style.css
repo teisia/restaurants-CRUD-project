@@ -2,6 +2,10 @@ body {
   font: 14px "Quicksand", Helvetica, Arial, sans-serif;
 }
 
+.errors {
+  color: red;
+}
+
 h1 {
   background-color: #56CD77;
   color: #3B4637;

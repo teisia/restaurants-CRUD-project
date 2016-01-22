@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var knex = require('../db/knex');
 var request = require('request');
+var validate = require('../lib/validations');
 
 function neighborhoods() {
   return knex('neighborhoods');

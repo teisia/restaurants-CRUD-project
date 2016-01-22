@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var knex = require('../db/knex');
+var validate = require('../lib/validations');
 
 function restaurants() {
   return knex('restaurants');
@@ -37,10 +38,22 @@ router.post('/new', function(req, res) {
     image: req.body.image,
     bio: req.body.bio
   };
-  restaurants().insert(newRestaurant).then(function(result) {
-    res.redirect('/');
+  var errors=[];
+  errors.push(validate.nameIsNotBlank(req.body.name));
+  errors.push(validate.cityIsValid(req.body.city));
+  errors.push(validate.imageIsValid(req.body.image));
+  errors.push(validate.bioIsValid(req.body.bio));
+    errors = errors.filter(function(error) {
+      return error.length;
+    })
+      if (errors.length) {
+        res.render('pages/new', {errors: errors})
+      } else {
+      restaurants().insert(newRestaurant).then(function(result) {
+        res.redirect('/');
+      })
+    }
   })
-});
 
 // restaurant show page
 router.get('/:id', function(req, res) {
