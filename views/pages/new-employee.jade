@@ -1,31 +1,33 @@
 extends ../layout
 
 block content
-  if restaurants
-    h1 New Employee
-    div.newPageContainer
+  h1 New Employee
+  div.newPageContainer
+      include ../includes/errors.jade
+      br
       p New Employee
       div.newFormContainer
-        form(method='post' action='/restaurants/'+restaurants.id+'/employees')  
-          div.form
-            label(for='first_name') First Name
-            input.form-control(type='text' id='first_name' name='first_name' placeholder='First')
-          div.form
-            label(for='last_name') Last Name
-            input.form-control(type='text' id='last_name' name='last_name' placeholder='Last')
-          div.form  
-            label(for='position') Position
-            select.form-control(id='position' name='position')
-              option(value="Owner") Owner
-              option(value="Manager") Manager
-              option(value="Bartender") Bartender
-              option(value="Waiter") Waiter 
-              option(value="Host") Host
-              option(value="Bus") Bus 
-              option(value="Chef") Chef
-              option(value="Cook") Cook
-              option(value="Kitchen") Kitchen
-            button.cancelNew: a(href='/restaurants/'+restaurants.id+'') Cancel
-            button.submitNew(type='submit') Submit
-              
-            
+        if restaurants
+          form(method='post' action='/restaurants/'+restaurants.id+'/employees')  
+            div.form
+              label(for='first_name') First Name
+              input.form-control(type='text' id='first_name' name='first_name' placeholder='First')
+            div.form
+              label(for='last_name') Last Name
+              input.form-control(type='text' id='last_name' name='last_name' placeholder='Last')
+            div.form  
+              label(for='position') Position
+              select.form-control(id='position' name='position')
+                option(value="Owner") Owner
+                option(value="Manager") Manager
+                option(value="Bartender") Bartender
+                option(value="Waiter") Waiter 
+                option(value="Host") Host
+                option(value="Bus") Bus 
+                option(value="Chef") Chef
+                option(value="Cook") Cook
+                option(value="Kitchen") Kitchen
+              button.cancelNew: a(href='/restaurants/'+restaurants.id+'') Cancel
+              button.submitNew(type='submit') Submit
+                  
+                    

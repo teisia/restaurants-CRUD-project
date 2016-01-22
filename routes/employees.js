@@ -18,17 +18,27 @@ router.get('/:id/employees/new', function(req, res) {
   })
 });
 
-// post new employee
+// post new employee with validations
 router.post('/:id/employees', function(req, res) {
-var newEmployee = {
-  first_name: req.body.first_name,
-  last_name: req.body.last_namde,
-  position: req.body.position,
-  restaurants_id: req.params.id
-}
-employees().insert(newEmployee).then(function(result) {
-  res.redirect('/restaurants/'+req.params.id);
-  })
+  var newEmployee = {
+    first_name: req.body.first_name,
+    last_name: req.body.last_namde,
+    position: req.body.position,
+    restaurants_id: req.params.id
+};
+  var errors=[];
+  errors.push(validate.firstNameIsNotBlank(req.body.first_name));
+  errors.push(validate.lastNameIsNotBlank(req.body.last_name));
+    errors = errors.filter(function(error) {
+      return error.length;
+    })
+      if (errors.length) {
+        res.render('pages/new-employee', {errors: errors, restaurants: true})
+      } else {
+      employees().insert(newEmployee).then(function(result) {
+        res.redirect('/restaurants/'+req.params.id);
+    })
+  }
 })
 
 // show edit employee page

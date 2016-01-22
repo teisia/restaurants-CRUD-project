@@ -27,7 +27,7 @@ router.get('/new', function(req, res) {
     res.render('pages/new', {errors:[]});
 });
 
-// post new restaurant
+// post new restaurant with validations
 router.post('/new', function(req, res) {
   var newRestaurant = {
     name: req.body.name,
@@ -40,9 +40,9 @@ router.post('/new', function(req, res) {
   };
   var errors=[];
   errors.push(validate.nameIsNotBlank(req.body.name));
-  errors.push(validate.cityIsValid(req.body.city));
-  errors.push(validate.imageIsValid(req.body.image));
-  errors.push(validate.bioIsValid(req.body.bio));
+  errors.push(validate.cityIsNotBlank(req.body.city));
+  errors.push(validate.imageIsNotBlank(req.body.image));
+  errors.push(validate.bioIsNotBlank(req.body.bio));
     errors = errors.filter(function(error) {
       return error.length;
     })
