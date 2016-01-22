@@ -3,19 +3,17 @@ extends ../layout
 block content
   h1.neighborhoodTitle #{neighborhoods.name}
   div.neighborhoodShow
-    div#map.indvMap
-    script.
-      var map;
-      var lat_long = '#{lat_long}';
-      var latitude = #{lat_long.lat};
-      var longitude = #{lat_long.lng};
-      function initMap() {
-        map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: latitude, lng: longitude},
-          zoom: 12
-        });
-      }
-    script(async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC_AEJoor25uoZy70X3iaMELWOJe14n8HE&callback=initMap")
+    .indvMap
+      div(id='map#{neighborhoods.id}' class='maps')
+      script.
+        var map#{neighborhoods.id};
+        function initMap#{neighborhoods.id}() {
+          map#{neighborhoods.id} = new google.maps.Map(document.getElementById('map#{neighborhoods.id}'), {
+            center:  {lat: #{neighborhoods.latitude}, lng: #{neighborhoods.longitude}},
+            zoom: 14
+          });
+        }
+      script(async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC_AEJoor25uoZy70X3iaMELWOJe14n8HE&callback=initMap#{neighborhoods.id}")
     .neighRight
       h3 #{neighborhoods.epicenter}
       br

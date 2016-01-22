@@ -3,6 +3,8 @@ exports.up = function(knex, Promise) {
     table.increments();
     table.string('epicenter');
     table.string('name');
+    table.float('latitude');
+    table.float('longitude');
   })
 };
 
