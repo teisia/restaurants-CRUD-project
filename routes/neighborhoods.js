@@ -7,40 +7,27 @@ function neighborhoods() {
   return knex('neighborhoods');
 };
 
-
-function getMap(epicenter) {
-  var lats;
-  console.log("epicenter is: " + epicenter)
-  var google_api = 'https://maps.googleapis.com/maps/api/geocode/json';
-//  var epicenter = result[0].epicenter.split(' ').join('+');
-  var address = '?address='+epicenter+'';
-  var my_key = '&key='+'AIzaSyC_AEJoor25uoZy70X3iaMELWOJe14n8HE';
-    request(google_api+address+my_key, function (error, response, body) {
-      if (!error && response.statusCode == 200) {
-        var jase = JSON.parse(body);
-        var lat_long = jase.results[0].geometry.location;
-        lats = lat_long
-    }
-    return lats;
-  })
-  console.log("global lats: " + lats);
-}
-
 // show all neighborhoods page
 router.get('/', function(req, res, next) {
   neighborhoods().select().then(function(result) {
-  //  var array = [];
     var latArray = [];
+    var google_api = 'https://maps.googleapis.com/maps/api/geocode/json';
     for (var i = 0; i < result.length; i++) {
-      // array.push(result[i].epicenter);<!--
-      console.log(getMap(result[i].epicenter))
-      latArray.push(getMap(result[i].epicenter));
-      }
-    //  for (var i = 0; i < array.length; i++) {
-  //      latArray.push(getMap('7889 allison way arvada co 80005'));
-  //    }
-      console.log("lat array is: " + latArray)
-        res.render('pages/neighborhoods', {lat_long: {lat: 0, lng: 0}, neighborhoods: result});
+      latArray.push(result[i].epicenter);
+
+    var address = '?address='+latArray[i]+'';
+
+    var my_key = '&key='+'AIzaSyC_AEJoor25uoZy70X3iaMELWOJe14n8HE';
+      request(google_api+address+my_key, function (error, response, body) {
+        if (!error && response.statusCode == 200) {
+          var jase = JSON.parse(body);
+          var lat_long = jase.results[0].geometry.location;
+
+              //console.log(latArray);
+                res.render('pages/neighborhoods', {lat_long: latArray, neighborhoods: result});
+        }
+      })
+    }
   })
 });
 
