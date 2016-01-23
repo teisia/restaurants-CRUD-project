@@ -22,7 +22,7 @@ router.get('/:id/employees/new', function(req, res) {
 router.post('/:id/employees', function(req, res) {
   var newEmployee = {
     first_name: req.body.first_name,
-    last_name: req.body.last_namde,
+    last_name: req.body.last_name,
     position: req.body.position,
     restaurants_id: req.params.id
 };
@@ -33,7 +33,9 @@ router.post('/:id/employees', function(req, res) {
       return error.length;
     })
       if (errors.length) {
-        res.render('pages/new-employee', {errors: errors, restaurants: true})
+      restaurants().select().then(function(result) {
+        res.render('pages/new-employee', {errors: errors, restaurants: result})
+      })
       } else {
       employees().insert(newEmployee).then(function(result) {
         res.redirect('/restaurants/'+req.params.id);
