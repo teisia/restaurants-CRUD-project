@@ -33,9 +33,11 @@ router.post('/:id/employees', function(req, res) {
       return error.length;
     })
       if (errors.length) {
-      restaurants().select().then(function(result) {
-        res.render('pages/new-employee', {errors: errors, restaurants: result})
-      })
+      restaurants().select().first().then(function(result) {
+        employees().select().then(function(result2) {
+        res.render('pages/new-employee', {errors: errors, restaurants: result, employees: result2})
+          })
+        })
       } else {
       employees().insert(newEmployee).then(function(result) {
         res.redirect('/restaurants/'+req.params.id);
