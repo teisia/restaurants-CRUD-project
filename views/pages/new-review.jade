@@ -4,6 +4,8 @@ block content
   if restaurants
     h1 New Review
     div.newPageContainer
+      include ../includes/errors.jade
+      br
       p New Review
       div.newFormContainer
         form(method='post' action='/restaurants/'+restaurants.id+'/reviews')

@@ -43,7 +43,7 @@ router.post('/:id/employees', function(req, res) {
         res.redirect('/restaurants/'+req.params.id);
     })
   }
-})
+});
 
 // show edit employee page
 router.get('/:id/employees/:empid/edit', function(req, res, next) {
@@ -63,7 +63,7 @@ router.post('/:id/employees/:empid', function(req, res){
  employees().where('id', req.params.empid).update(items).then(function(result){
      res.redirect('/restaurants/'+req.params.id);
    })
-})
+});
 
 // delete employee
 router.get('/:id/employees/:empid/delete', function(req, res, next) {

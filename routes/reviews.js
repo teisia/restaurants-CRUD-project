@@ -31,9 +31,24 @@ router.post('/:id/reviews', function(req, res, next) {
     review: req.body.review,
     restaurants_id: req.params.id
   }
-  reviews().insert(newReview).then(function(result) {
-    res.redirect('/restaurants/'+req.params.id);
-  })
+  var errors=[];
+  errors.push(validate.nameIsNotBlank(req.body.name));
+  errors.push(validate.dateIsNotBlank(req.body.date));
+  errors.push(validate.reviewIsNotBlank(req.body.review));
+    errors = errors.filter(function(error) {
+      return error.length;
+    })
+      if (errors.length) {
+      restaurants().select().first().then(function(result) {
+        reviews().select().then(function(result2) {
+        res.render('pages/new-review', {errors: errors, restaurants: result, reviews: result2})
+          })
+        })
+      } else {
+      reviews().insert(newReview).then(function(result) {
+        res.redirect('/restaurants/'+req.params.id);
+    })
+  }
 });
 
 // show edit review page
@@ -55,7 +70,7 @@ router.post('/:id/reviews/:revid', function(req, res){
  reviews().where('id', req.params.revid).update(items).then(function(result){
      res.redirect('/restaurants/'+req.params.id);
    })
-})
+});
 
 // delete review
 router.get('/:id/reviews/:reviewid/delete', function(req, res, next) {

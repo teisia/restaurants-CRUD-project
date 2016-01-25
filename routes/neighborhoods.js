@@ -38,7 +38,7 @@ router.post('/',function(req, res, next) {
       })
     }
   })
-})
+});
 
 // show individual neighborhood page
 router.get('/:id', function(req, res, next) {
@@ -78,6 +78,5 @@ router.get('/:id/delete', function(req, res, next) {
     res.redirect('/neighborhoods');
   })
 });
-
 
 module.exports = router;

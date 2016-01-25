@@ -51,9 +51,9 @@ router.post('/new', function(req, res) {
       } else {
       restaurants().insert(newRestaurant).then(function(result) {
         res.redirect('/');
-      })
-    }
-  })
+    })
+  }
+});
 
 // restaurant show page
 router.get('/:id', function(req, res) {
