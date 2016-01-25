@@ -3,6 +3,8 @@ extends ../layout
 block content
   h1 New Neighborhood
   div.newPageContainer
+    include ../includes/errors.jade
+    br
     p New Neighborhood
     div.newFormContainer
       form(method='post' action='/neighborhoods')

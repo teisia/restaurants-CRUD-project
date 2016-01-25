@@ -22,7 +22,7 @@ router.get('/:id/reviews/new', function(req, res, next) {
   })
 });
 
-//post new review
+//post new review with validations
 router.post('/:id/reviews', function(req, res, next) {
   var newReview = {
     name: req.body.name,
@@ -53,8 +53,10 @@ router.post('/:id/reviews', function(req, res, next) {
 
 // show edit review page
 router.get('/:id/reviews/:reviewid/edit', function(req, res, next) {
-  reviews().where('restaurants_id', req.params.id).first().then(function(result){
-    res.render('pages/edit-review', {reviews: result});
+  restaurants().where('id', req.params.id).first().then(function(result){
+    reviews().where('id', req.params.reviewid).first().then(function(result2){
+      res.render('pages/edit-review', {restaurants: result, reviews: result2});
+    })
   })
 });
 
