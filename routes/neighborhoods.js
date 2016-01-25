@@ -20,24 +20,36 @@ router.get('/new', function(req, res, next) {
   res.render('pages/neighborhood-new');
 });
 
-// post new neighborhood
+// post new neighborhood with validations
 router.post('/',function(req, res, next) {
-  var google_api = 'https://maps.googleapis.com/maps/api/geocode/json?address='+req.body.epicenter;
-  var my_key = '&key='+'AIzaSyC_AEJoor25uoZy70X3iaMELWOJe14n8HE';
-  request(google_api+my_key, function (error, response, body) {
-    if (!error && response.statusCode == 200) {
-      var jase = JSON.parse(body);
-      var neighborhoodListing = {
-        name: req.body.name,
-        epicenter: req.body.epicenter,
-        latitude: jase.results[0].geometry.location.lat,
-        longitude: jase.results[0].geometry.location.lng,
+  var errors=[];
+  errors.push(validate.nameIsNotBlank(req.body.name));
+  errors.push(validate.epicenterIsNotBlank(req.body.epicenter));
+    errors = errors.filter(function(error) {
+      return error.length;
+    })
+      if (errors.length) {
+        neighborhoods().select().then(function(result) {
+        res.render('pages/neighborhood-new', {errors: errors, neighborhoods: result})
+        })
+      } else {
+      var google_api = 'https://maps.googleapis.com/maps/api/geocode/json?address='+req.body.epicenter;
+      var my_key = '&key='+'AIzaSyC_AEJoor25uoZy70X3iaMELWOJe14n8HE';
+      request(google_api+my_key, function (error, response, body) {
+        if (!error && response.statusCode == 200) {
+          var jase = JSON.parse(body);
+          var neighborhoodListing = {
+            name: req.body.name,
+            epicenter: req.body.epicenter,
+            latitude: jase.results[0].geometry.location.lat,
+            longitude: jase.results[0].geometry.location.lng,
+          }
+      neighborhoods().insert(neighborhoodListing).then(function(result) {
+          res.redirect('/neighborhoods');
+        })
       }
-  neighborhoods().insert(neighborhoodListing).then(function(result) {
-      res.redirect('/neighborhoods');
-      })
-    }
-  })
+    })
+  }
 });
 
 // show individual neighborhood page

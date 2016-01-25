@@ -28,7 +28,7 @@ router.get('/new', function(req, res) {
 });
 
 // post new restaurant with validations
-router.post('/new', function(req, res) {
+router.post('/', function(req, res) {
   var newRestaurant = {
     name: req.body.name,
     city: req.body.city,
