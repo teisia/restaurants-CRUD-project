@@ -70,16 +70,16 @@ block content
             label(for='cuisine') Cuisine
             select.form-control(id='location' name='cuisine')
               option= restaurants.cuisine
-              option(value="American Cuisine") American 
-              option(value="Chinese Cuisine") Chinese 
-              option(value="Italian Cuisine") Italian 
-              option(value="Japanese Cuisine") Japanese 
-              option(value="Korean Cuisine") Korean 
-              option(value="Mexican Cuisine") Mexican 
-              option(value="Polish Cuisine") Polish 
-              option(value="Thai Cuisine") Thai 
-              option(value="Vietnamese Cuisine") Vietnamese 
-              option(value="Other Cuisine") Other 
+              option(value="American") American 
+              option(value="Chinese") Chinese 
+              option(value="Italian") Italian 
+              option(value="Japanese") Japanese 
+              option(value="Korean") Korean 
+              option(value="Mexican") Mexican 
+              option(value="Polish") Polish 
+              option(value="Thai") Thai 
+              option(value="Vietnamese") Vietnamese 
+              option(value="Other") Other 
           .radioButtons
             label(for='rating') Rating
             input(type='radio' name='rating' value='1' checked=(restaurants ? (restaurants.rating === 1 ? true : undefined ): undefined))

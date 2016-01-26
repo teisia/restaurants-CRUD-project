@@ -10,11 +10,12 @@ block content
         form(method='post' action='/restaurants')  
           div.form
             label(for='name') Name
-            input.form-control(type='text' id='name' name='name' placeholder='Restaurant Name')
+            input.form-control(type='text' id='name' name='name' value= info ? info.name : '' placeholder='Restaurant Name')
           div.form.location
             label(for='location') Location
-            input.form-control(type='text' id='location' name='city' placeholder='City')
+            input.form-control(type='text' id='location' name='city' value= info ? info.city : '' placeholder='City')
             select.form-control(id='location' name='state' required)
+              option= info ? info.state : ''
               option(value="AL") AL
               option(value="AK") AK
               option(value="AZ") AZ
@@ -69,16 +70,17 @@ block content
           div.form  
             label(for='cuisine') Cuisine
             select.form-control(id='location' name='cuisine' required)
-              option(value="American Cuisine") American 
-              option(value="Chinese Cuisine") Chinese 
-              option(value="Italian Cuisine") Italian 
-              option(value="Japanese Cuisine") Japanese 
-              option(value="Korean Cuisine") Korean 
-              option(value="Mexican Cuisine") Mexican 
-              option(value="Polish Cuisine") Polish 
-              option(value="Thai Cuisine") Thai 
-              option(value="Vietnamese Cuisine") Vietnamese 
-              option(value="Other Cuisine") Other 
+              option= value= info ? info.cuisine : '' 
+              option(value="American") American 
+              option(value="Chinese") Chinese 
+              option(value="Italian") Italian 
+              option(value="Japanese") Japanese 
+              option(value="Korean") Korean 
+              option(value="Mexican") Mexican 
+              option(value="Polish") Polish 
+              option(value="Thai") Thai 
+              option(value="Vietnamese") Vietnamese 
+              option(value="Other") Other 
           .radioButtons
             label(for='rating') Rating
             input(type='radio' name='rating' value='1')
@@ -88,9 +90,9 @@ block content
             input(type='radio' name='rating' value='5')
           div.form.image
             label(for='image') Image
-            input(id='image' name='image' placeholder='Image URL')
+            input(id='image' name='image' value= info ? info.image : '' placeholder='Image URL')
           div.form
-            textarea(id='bio', name='bio' placeholder='Short Bio')
+            textarea(id='bio', name='bio' placeholder='Short Bio')= info ? info.bio : ''
           div.form
             button.cancelNew: a(href='/restaurants') Cancel
             button.submitNew(type='submit') Submit

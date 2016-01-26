@@ -47,7 +47,7 @@ router.post('/', function(req, res) {
       return error.length;
     })
       if (errors.length) {
-        res.render('pages/new', {errors: errors})
+        res.render('pages/new', {errors: errors, info: req.body})
       } else {
       restaurants().insert(newRestaurant).then(function(result) {
         res.redirect('/');
