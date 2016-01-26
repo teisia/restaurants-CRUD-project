@@ -104,9 +104,36 @@ h3 a {
   padding: 15px 15px 50px 15px;
 }
 
+.newFormContainerAdmin {
+  width: 30%;
+  border: 1px solid #3B4637;
+  padding: 40px 40px 40px 40px;
+  margin: 0 auto;
+}
+
+.adminLoginTitle {
+  width: 30%;
+  margin: 0 auto;
+  padding-bottom: 10px;
+}
+
 .form {
   color: #3B4637;
   padding: 5px;
+}
+
+.adminform input {
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+.adminSubmit {
+  border: none;
+  border-radius: 5px;
+  margin-top: 10px;
+  margin-right: 15px;
+  width: 30%;
+  color: #3B4637;
 }
 
 .form input {
