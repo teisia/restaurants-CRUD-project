@@ -3,6 +3,9 @@ extends ../layout
 block content 
   if restaurants
     h1= restaurants.name
+      if logged_in 
+        .link
+          a(href='/admin/log-out') Log Out
     .showMainContainer
       .leftShowPg
         img(src=''+restaurants.image+'')
@@ -11,21 +14,22 @@ block content
         br
         br
         br
-        .restaurantListAdmin
-          button.showButtons.addEmp: a(href='/restaurants/'+restaurants.id+'/employees/new') Add Employee
-          table.empTable
-            thead
-              tr
-                th First Name 
-                th Last Name
-                th Position
-            for employee in employees 
-              if employee.restaurants_id == restaurants.id
-                tbody
-                  tr
-                    td: a(href='/restaurants/'+restaurants.id+'/employees/'+employee.id+'/edit')= employee.first_name
-                    td= employee.last_name
-                    td= employee.position
+        if logged_in
+          .restaurantListAdmin
+            button.showButtons.addEmp: a(href='/restaurants/'+restaurants.id+'/employees/new') Add Employee
+            table.empTable
+              thead
+                tr
+                  th First Name 
+                  th Last Name
+                  th Position
+              for employee in employees 
+                if employee.restaurants_id == restaurants.id
+                  tbody
+                    tr
+                      td: a(href='/restaurants/'+restaurants.id+'/employees/'+employee.id+'/edit')= employee.first_name
+                      td= employee.last_name
+                      td= employee.position
       .rightShowPg
         p= restaurants.cuisine
         p= 'Located in ' + restaurants.city + ', ' + restaurants.state  

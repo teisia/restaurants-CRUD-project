@@ -57,11 +57,12 @@ router.post('/', function(req, res) {
 
 // restaurant show page
 router.get('/:id', function(req, res) {
+  var logged_in = req.cookies.user ? true : false
   var the_id = req.params.id;
   restaurants().where('id', the_id).first().then(function(result) {
     reviews().where({restaurants_id: the_id}).then(function(result2) {
       employees().where({restaurants_id: the_id}).then(function(result3) {
-      res.render('pages/show', {restaurants: result, reviews: result2, employees: result3});
+      res.render('pages/show', {restaurants: result, reviews: result2, employees: result3, logged_in: logged_in});
       })
     })
   })

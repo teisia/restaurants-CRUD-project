@@ -25,13 +25,13 @@ h1 {
   padding-left: 420px;
 }
 
-#link {
+.link {
   float: right;
   font-size: 20px;
   margin-top: 25px;
 }
 
-#link span {
+.link span {
   color: white;
 }
 
