@@ -13,14 +13,6 @@ function users() {
 }
 
 router.get('/', function(req, res, next) {
-  res.render('pages/admin');
-});
-
-function users() {
-  return knex('users');
-}
-
-router.get('/', function(req, res, next) {
   if (req.cookies.user) {
     res.redirect('/admin/logged-in')
   } else {
