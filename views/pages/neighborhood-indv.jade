@@ -3,7 +3,7 @@ extends ../layout
 block content
   h1.neighborhoodTitle #{neighborhoods.name}
     .link
-      a(href='/restaurants'):  i.fa.fa-home
+      a.home(href='/restaurants'):  i.fa.fa-home
   div.neighborhoodShow
     .indvMap
       div(id='map#{neighborhoods.id}' class='maps')

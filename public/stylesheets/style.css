@@ -2,6 +2,12 @@ body {
   font: 14px "Quicksand", Helvetica, Arial, sans-serif;
 }
 
+.home {
+  position: absolute;
+  left: 1%;
+  top: 5%;
+}
+
 .errors {
   color: red;
 }
