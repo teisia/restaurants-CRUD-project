@@ -3,9 +3,11 @@ extends ../layout
 block content 
   if restaurants
     h1= restaurants.name
+      .link.linkShow
+        a(href='/restaurants'): i.fa.fa-home
       if logged_in 
         .link
-          a(href='/admin/log-out') Log Out
+          a(href='/admin/log-out') Log Out   
     .showMainContainer
       .leftShowPg
         img(src=''+restaurants.image+'')

@@ -398,11 +398,15 @@ h3 a {
 }
 
 .loginTitle {
-  padding-left: 50px;
+  padding-left: 65px;
 }
 
 .noMsg {
   font-size: 20px;
   padding-top: 70px;
   color: red;
+}
+
+.linkShow {
+  padding-left: 10px;
 }

@@ -3,7 +3,8 @@ extends ../layout
 block content
   h1 Neighborhoods
     .link
-      a(href='/neighborhoods/new') New
+      a(href='/neighborhoods/new') New 
+      a(href='/restaurants'):  i.fa.fa-home
   if neighborhoods
     for neighborhood in neighborhoods
       div(class="allMaps")
