@@ -5,8 +5,8 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 require('dotenv').load();
-var authChecker = require('./lib/authChecker')
 
+var auth = require('./routes/auth')
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var restaurants = require('./routes/restaurants');
@@ -29,12 +29,12 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use('/admin', admin);
 app.use('/', routes);
 app.use('/users', users);
 app.use('/restaurants', restaurants);
 app.use('/restaurants', employees);
 app.use('/restaurants', reviews);
-app.use('/admin', admin);
 app.use('/neighborhoods', neighborhoods);
 
 // catch 404 and forward to error handler

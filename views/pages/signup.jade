@@ -1,21 +1,17 @@
 extends ../layout
 
 block content
- h1.loginTitle Login 
-  .link
-    a(href='/admin/sign-up') Sign Up 
+ h1 Sign Up 
  div.newPageContainer
    include ../includes/errors.jade
    br
-   p.adminLoginTitle Login to your account
+   p.adminLoginTitle Sign up for a new account
    div.newFormContainerAdmin
-     form(method='post' action='/admin/login')  
+     form(method='post' action='/admin')  
        div.adminform
          label(for='username') Username
          input.form-control(type='text' id='username' name='username' placeholder='Username')
        div.adminform
          label(for='password') Password
          input.form-control(type='password' id='password' name='password' placeholder='Password')
-         button.adminSubmit.submitNew(type='submit') Login
-  if notice
-    p.notice=notice
+         button.adminSubmit.submitNew(type='submit') Submit
